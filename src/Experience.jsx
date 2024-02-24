@@ -2,22 +2,22 @@ import React, {useState, useEffect, useRef} from 'react';
 import 'animate.css';
 
 
-function About(props) {
+function Experience(props) {
   const [animate, setAnimate] = useState(false);
-  const [aboutPosition, setaboutPosition] = useState(undefined);
+  const [expPosition, setexpPosition] = useState(undefined);
   const [TopS, setTopS] = useState(0);
   const element = useRef(null);
 
   useEffect(() => {
     console.log('useEffect has been called');
-    let element = document.getElementById("About-container");
+    let element = document.getElementById("Exp-container");
 
-    //measures the postion of the top of the about container element
+    //measures the postion of the top of the exp container element
     //if scroll reaches a certatin point, animate is set to true,
-    //and the about conatiner is shown with animation
-    function aboutScrolly() {
+    //and the exp conatiner is shown with animation
+    function expScrolly() {
       let rect = element.getBoundingClientRect();
-      setaboutPosition(rect.top); 
+      setexpPosition(rect.top); 
       //for screens that are small
       if (window.matchMedia('screen and (max-width: 1000px)').matches) {
         setAnimate(true);
@@ -27,15 +27,15 @@ function About(props) {
       }   
     }
 
-    window.addEventListener("scroll", aboutScrolly);
-    return () => window.removeEventListener("scroll", aboutScrolly);
-    aboutScrolly();
+    window.addEventListener("scroll", expScrolly);
+    return () => window.removeEventListener("scroll", expScrolly);
+    expScrolly();
   }, [TopS]);
 
 
 if(animate){
   const animations = ["animate__animated","animate__bounceInLeft"]
-  let element = document.getElementById("About-container");  
+  let element = document.getElementById("Exp-container");  
   element.classList.add(...animations);
 
    
@@ -46,9 +46,9 @@ if(animate){
 
 if (animate){
   return (  
-      <div id="About" className={"About"}>      
+      <div id="Experience" className={"Experience"}>      
         <h1>
-          About
+          Experience
         </h1>
         <p>
           I am a student at Stevens Institute of Technology, working on a Bachelors in Computer Science.
@@ -59,4 +59,4 @@ if (animate){
  }
 }
 
-export default About;
+export default Experience;
