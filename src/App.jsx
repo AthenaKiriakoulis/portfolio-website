@@ -6,6 +6,7 @@ import background from './assets/jonathan-roger-unsplash.jpg';
 import 'animate.css';
 import Education from './Education.jsx';
 import Experience from './Experience.jsx';
+import Projects from './Projects.jsx'
 
 
 
@@ -80,6 +81,9 @@ function App() {
       </div>
       <div id="Exp-container" className="Exp-container"> 
       <Experience />
+      </div>
+      <div id="Projects-Container" className="Projects-Container"> 
+      <Projects />
       </div>
       <h1>hi</h1>
       <h1>hi</h1>

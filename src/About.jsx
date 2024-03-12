@@ -20,7 +20,7 @@ function About(props) {
       setaboutPosition(rect.top); 
       //for screens that are small
       if (window.matchMedia('screen and (max-width: 1000px)').matches) {
-        setAnimate(true);
+        setAnimate(false);
       }
       else if(rect.top < 200 && !animate){
         setAnimate(true);
@@ -34,6 +34,7 @@ function About(props) {
 
 
 if(animate){
+
   const animations = ["animate__animated","animate__bounceInLeft"]
   let element = document.getElementById("About-container");  
   element.classList.add(...animations);
