@@ -39,7 +39,7 @@ function Projects(props) {
             This Website
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            This website uses React, Javascript, CSS, and is hosted on Github pages
+            This website uses React, Javascript, CSS, and it is hosted on Github pages
           </Typography>
         </CardContent>
         <CardActions>
