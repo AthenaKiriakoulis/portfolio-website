@@ -6,7 +6,8 @@ import background from './assets/jonathan-roger-unsplash.jpg';
 import 'animate.css';
 import Education from './Education.jsx';
 import Experience from './Experience.jsx';
-import Projects from './Projects.jsx'
+import Projects from './Projects.jsx';
+import Bottom from './Bottom.jsx';
 
 
 
@@ -42,9 +43,9 @@ function App() {
             <a href="#Home" className="Inner-header">Home</a>
             <a href="#About-container" className="Inner-header">About</a>
             <a href="#Edu-container" className="Inner-header">Education</a>
-            <a href="#Home" className="Inner-header">Experience</a>
-            <a href="#Home" className="Inner-header">Projects</a>
-            <a href="#Home" className="Inner-header">Contact</a>
+            <a href="#Exp-container" className="Inner-header">Experience</a>
+            <a href="#Projects-Container" className="Inner-header">Projects</a>
+            <a href="#Bottom-Container" className="Inner-header">Contact</a>
         </header>
       </div>
       <div>
@@ -85,14 +86,9 @@ function App() {
       <div id="Projects-Container" className="Projects-Container"> 
       <Projects />
       </div>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
+      <div id="Bottom-Container" className="Bottom-Container"> 
+      <Bottom />
+      </div>
 
       </div>
 

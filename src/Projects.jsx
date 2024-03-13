@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
 import './App.css';
 
 function Projects(props) {
@@ -30,7 +31,9 @@ function Projects(props) {
 
   return (  
     <ThemeProvider theme={theme}>
-      <Card sx={{ maxWidth: 1000}}>
+      <h1> Projects</h1>
+      <Stack spacing={5}>
+      <Card sx={{ maxWidth: 1000, marginTop: 'auto',}}>
         <CardContent>
           <Typography gutterBottom variant="h4" component="div">
             This Website
@@ -43,6 +46,24 @@ function Projects(props) {
           <Button sx={{color: "#FFFFFF"}} href="https://github.com/AthenaKiriakoulis/portfolio-website" size="small">Github Repository</Button>
         </CardActions>
       </Card>
+
+
+      <Card sx={{ maxWidth: 1000, marginTop: 'auto'}}>
+        <CardContent>
+          <Typography gutterBottom variant="h4" component="div">
+            Spelling Bee Clone
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Spelling Bee is a game on the New York Times Webiste.
+            this is a clone made with python and tkinter that randomly generates the
+            game and provides the solution.
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button sx={{color: "#FFFFFF"}} href="https://github.com/AthenaKiriakoulis/SpellingBeeClonePython" size="small">Github Repository</Button>
+        </CardActions>
+      </Card>
+      </Stack>
     </ThemeProvider>
   );
  
