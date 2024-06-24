@@ -51,6 +51,24 @@ function Projects(props) {
       <Card sx={{ maxWidth: 1000, marginTop: 'auto'}}>
         <CardContent>
           <Typography gutterBottom variant="h4" component="div">
+            OR83 Bounty Board
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Another project Im working on needed a system where tasks could be created based on
+            a map, and other team members could assign themselves to the tasks. Thus, I created a bounty
+            board that simulates this system. It runs on react with a firebase firestore database holding 
+            the data
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button sx={{color: "#FFFFFF"}} href="https://github.com/AthenaKiriakoulis/OR83-Bounty-Board" size="small">Github Repository</Button>
+          <Button sx={{color: "#FFFFFF"}} href="https://or-83-bounty-board.vercel.app/" size="small">Website</Button>
+        </CardActions>
+      </Card>
+
+      <Card sx={{ maxWidth: 1000, marginTop: 'auto'}}>
+        <CardContent>
+          <Typography gutterBottom variant="h4" component="div">
             Spelling Bee Clone
           </Typography>
           <Typography variant="body2" color="text.secondary">
