@@ -52,8 +52,8 @@ if (animate){
           About
         </h1>
         <p>
-          I am a student at Stevens Institute of Technology, working on a Bachelors in Computer Science.
-          Currently, I'm in my last semester and will be graduating in May 2024. 
+          I am a software developer, recently graduated from Stevens Institute of Technology in May 2024
+          with a Bachelors in Computer Science.
         </p>
     </div>
   );
