@@ -57,44 +57,44 @@ function Experience() {
     <div className='flex transition-transform duration-500 ease-in-out' style={{ transform: `translateX(-${(index * 110)}%)`, width: '100%' }}>
 
     <div className='shrink-0 w-full my-5' style={{marginLeft:`0%`, marginRight:`5%`}}>
-          <h1 className="text-3xl md:text-4xl font-bold font-rubik text-center text-violet-50">React Developer </h1>
-          <p className='text-md md:text-xl font-nunito text-center mt-1 lg:mt-5 text-violet-50 italic'>Stevens Institute of Technology</p>
-          <p className='text-md md:text-xl font-nunito text-center mt-1 lg:mt-5 text-violet-50 italic'>Jun 2023 – Aug 2024</p>
+          <h1 className="text-3xl font-bold font-rubik text-center text-violet-50">React Developer </h1>
+          <p className='text-md md:text-lg font-nunito text-center mt-1 lg:mt-3 text-violet-50 italic'>Stevens Institute of Technology</p>
+          <p className='text-md md:text-lg font-nunito text-center mt-1 lg:mt-3 text-violet-50 italic'>Jun 2023 – Aug 2024</p>
           <ul className='list-disc w-10/12 list-outside mx-10'>
-            <li className='text-md md:text-xl  font-nunito mt-5 text-violet-50 text-left'>Elevated performance and usability of the Nukemap website 
+            <li className='text-md md:text-lg  font-nunito mt-3 text-violet-50 text-left'>Elevated performance and usability of the Nukemap website 
                 by developing React components, resulting in refined user experience for a high-traffic platform with over 300,000 page views monthly.</li>
-            <li className='text-md md:text-xl  font-nunito mt-5 text-violet-50 text-left'>Optimized the Nukemap website's codebase for scalability and future updates by collaborating with a team of
+            <li className='text-md md:text-lg  font-nunito mt-3 text-violet-50 text-left'>Optimized the Nukemap website's codebase for scalability and future updates by collaborating with a team of
                   four to migrate legacy code to React, ensuring smoother and more maintainable development.</li>
-            <li className='text-md md:text-xl  font-nunito mt-5 text-violet-50 text-left'>Revamped user interface elements by translating legacy components into React and integrating them
+            <li className='text-md md:text-lg  font-nunito mt-3 text-violet-50 text-left'>Revamped user interface elements by translating legacy components into React and integrating them
                   seamlessly with existing code, resulting in consistent design and functionality across the website</li>
           </ul>
           </div>
 
           <div className='shrink-0 w-full my-5 ' style={{marginLeft:`5%`, marginRight:`5%`}}>
-          <h1 className="text-3xl md:text-4xl font-bold font-rubik  text-center text-violet-50">Writing and Research Director</h1>
-          <p className='text-md md:text-xl font-nunito text-center mt-1 lg:mt-5  text-violet-50 italic'>Stevens Institute of Technology </p>
-          <p className='text-md md:text-xl font-nunito text-center mt-1 lg:mt-5  text-violet-50 italic'>Jun 2022 - Aug 2024</p>
+          <h1 className="text-3xl md:text-3xl font-bold font-rubik  text-center text-violet-50">Writing and Research Director</h1>
+          <p className='text-md md:text-lg font-nunito text-center mt-1 lg:mt-3  text-violet-50 italic'>Stevens Institute of Technology </p>
+          <p className='text-md md:text-lg font-nunito text-center mt-1 lg:mt-3  text-violet-50 italic'>Jun 2022 - Aug 2024</p>
           <ul className='list-disc w-10/12 list-outside mx-10'>
-            <li className='text-md md:text-xl font-nunito text-left mt-5 text-violet-50'>Established the foundational structure for a video game based on Nuclear History by 
+            <li className='text-md md:text-lg font-nunito text-left mt-3 text-violet-50'>Established the foundational structure for a video game based on Nuclear History by 
             interpreting over 700 pages of research documents, ensuring accuracy and depth in the game's content.</li>
-            <li className='text-md md:text-xl font-nunito text-left mt-5 text-violet-50'>Boosted team productivity by 20% as measured by the completion of weekly project goals, 
+            <li className='text-md md:text-lg font-nunito text-left mt-3 text-violet-50'>Boosted team productivity by 20% as measured by the completion of weekly project goals, 
             by coordinating a team of 14 writers and researchers to deliver high-quality content efficiently.</li>
-            <li className='text-md md:text-xl font-nunito text-left mt-5 text-violet-50'>Improved project oversight and team alignment reflected in consistent progress reviews, 
+            <li className='text-md md:text-lg font-nunito text-left mt-3 text-violet-50'>Improved project oversight and team alignment reflected in consistent progress reviews, 
             by facilitating weekly meetings with a group of ten team members to assess and drive overall project progress.</li>
           </ul>
           </div>
 
           <div className='shrink-0 w-full my-5' style={{marginLeft:`5%`, marginRight:`5%`}}>
-          <h1 className="text-3xl md:text-4xl font-bold font-rubik text-center text-violet-50">Teaching Assistant</h1>
-          <p className='text-md md:text-xl font-nunito text-center mt-1 lg:mt-5  text-violet-50 italic'>Stevens Institute of Technology </p>
-          <p className='text-md md:text-xl font-nunito text-center mt-1 lg:mt-5  text-violet-50 italic'>Sept 2023 - Dec 2023</p>
+          <h1 className="text-3xl md:text-3xl font-bold font-rubik text-center text-violet-50">Teaching Assistant</h1>
+          <p className='text-md md:text-lg font-nunito text-center mt-1 lg:mt-3  text-violet-50 italic'>Stevens Institute of Technology </p>
+          <p className='text-md md:text-lg font-nunito text-center mt-1 lg:mt-3  text-violet-50 italic'>Sept 2023 - Dec 2023</p>
           <ul className='list-disc w-10/12 list-outside mx-10'>
-            <li className='text-md md:text-xl font-nunito text-left mt-5 text-violet-50'>Supported the grading process for a web development 
+            <li className='text-md md:text-lg font-nunito text-left mt-3 text-violet-50'>Supported the grading process for a web development 
             graduate class of over 180 students by facilitating the professor’s grading efforts, resulting in efficient completion 
             of assignments over a 15-week course.</li>
-            <li className='text-md md:text-xl font-nunito text-left mt-5 text-violet-50'>Resolved student grading concerns and assignment questions
+            <li className='text-md md:text-lg font-nunito text-left mt-3 text-violet-50'>Resolved student grading concerns and assignment questions
              by providing prompt and detailed email responses, addressing inquiries from students across six class sections.</li>
-            <li className='text-md md:text-xl font-nunito text-left mt-5 text-violet-50'>Enhanced student understanding of Node.js and JavaScript by 
+            <li className='text-md md:text-lg font-nunito text-left mt-3 text-violet-50'>Enhanced student understanding of Node.js and JavaScript by 
             conducting independent office hours and offering one-to-one support for at least two hours each week, leading to higher 
             comprehension and engagement.</li>
           </ul>

@@ -92,7 +92,7 @@ function AboutMe() {
           <h1 className="text-3xl font-bold font-nunito text-center text-black">About Me</h1>
           <p className='text-lg lg:text-2xl font-nunito text-center mt-5 text-black'>I am a software developer, recently graduated from Stevens Institute of Technology in May 2024 with a Bachelors in Computer Science.</p>
           </div>
-    <div className='shrink-0 w-8/12 ml-[50%] lg:w-full lg:ml-[4%] lg:mr-[10%]' >
+    <div className='shrink-0 w-8/12 ml-[50%] lg:w-full lg:ml-[10%] lg:mr-[10%]' >
           <h1 className="text-3xl font-bold font-nunito text-center text-black">Education</h1>
           <p className='text-lg lg:text-2xl font-nunito text-center mt-5 text-black'>Stevens Institute of Technology - Class of 2024 </p>
           <p className='text-lg lg:text-2xl font-nunito text-center mt-5 text-black'>Bachelors in Computer Science</p>
