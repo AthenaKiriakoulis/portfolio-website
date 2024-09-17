@@ -2,55 +2,504 @@ html,body{
     overscroll-behavior: none;
     margin: 0;
     padding: 0;
-    background: #0C0917;
+    background: #050816;
     overflow-x:hidden;
 }
 
-.App-header {
-    background-color: #A090DD;
-    height: 60%;
-    width: 95%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    border-radius: 30px;
-    z-index: 5;
-    opacity: 80%;
-    position: relative;
+.link-reset {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+  
+  }
+  
+
+/* Sky --------------------------------------------------------------------------------------------*/
+  .box {
+    /*  needed for firefox to have a valid output */
+    flex: 1;
+    /**/
+    background:linear-gradient(360deg, #FED58D, #FDBD99, #FDABA5, #e0aee9);
+
+	height: 100vh;
+  }
+  
+  @keyframes a{
+    from {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    to {
+        background-position: 0% 50%;
+    }
   }
 
-.Header-container {
-    height: 90px;
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-    z-index: 4;
+  .floating {
+    position: absolute;
+    --start: 100%;
+    top: 0; /* Initial top position, will be randomized later */
+    animation: moveLeft 50s linear infinite;
+  }
+
+  .floating2 {
+    position: absolute;
+    --start: 100%;
+    top: 0; /* Initial top position, will be randomized later */
+    animation: moveLeft 60s linear infinite;
+
+  }
+
+  .floating3 {
+    position: absolute;
+    --start: 100%;
+    top: 0; /* Initial top position, will be randomized later */
+    animation: moveLeft 70s linear infinite;
+    animation-delay: 2s;
+  }
+
+  .floating4 {
+    position: absolute;
+    --start: 100%;
+    top: 0; /* Initial top position, will be randomized later */
+    animation: moveLeft 80s linear infinite;
+    animation-delay: 7s;
+  }
+
+  @keyframes moveLeft {
+    0% {
+      left: --start; /* Start at the right edge */
+    }
+    100% {
+      left: -100%; /* Move off-screen to the left */
+    }
+  }
+
+
+  .cloud {
+    width: 500px;
+    height: 275px;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  #cloud-back {
+    filter: url(#filter-back);
+    box-shadow:  300px 30px -20px #fff;
+  }
+  
+  #cloud-mid {
+    filter: url(#filter-mid);
+    box-shadow: 300px 340px 70px -60px rgba(158, 168, 179, 0.5);
+      left: -25vw;
+  }
+  
+  #cloud-front {
+    filter: url(#filter-front);
+    box-shadow: 300px 370px 60px -100px rgba(0, 0, 0, 0.3);
+      left: -25vw;
+  }
+
+
+
+
+
+
+
+  .static-overlay {
+    position: absolute;
+    inset: -200%;
+    background-image: url("./assets/white-noise-1.jpg");
+    opacity: 45%;
+
+    animation: static 0.2s linear infinite both;
+  }
+
+  @keyframes static{
+    0% {
+        transform: translateX(10%) translateY(10%);
+    }
+    100% {
+        transform: translateX(-10%) translateY(-10%);
+    }
+  }
+
+/* Ocean --------------------------------------------------------------------------------------------*/
+
+
+.wave-container {
+  width: 100%; /* Adjust to fit your design */
 }
 
-.Inner-header{
-    padding:2.5vw;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 2.5vw;
+.wave {
+  width: calc(200%);
+  animation: 10s moveWave cubic-bezier( 0.35, 0.40, 0.70, 0.50) infinite;
+  position: absolute;
+  transform: translate3d(0, 0, 0);
+  opacity: 50%;
+
+  
 }
 
-.Background-image{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: -10%;
-    top: 0%;
-    z-index: 1;
-    width: 100%;
+.wave2 {
+  width: calc(200%);
+  animation: 15s moveWave cubic-bezier( 0.35, 0.40, 0.70, 0.50) -.125s infinite, flow 7s ease -1.25s infinite;
+
+  z-index: 20;
 }
+
+
+@keyframes moveWave {
+  0% {
+    transform: translateX(0) ;
+  }
+  50% {
+    transform: translateX(-25%) ;
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+@keyframes flow {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
+
+
+.fish-container{
+  animation: var(--swim-type) 30s linear infinite;
+  animation-delay: var(--swim-delay);
+}
+.fish {
+  height: 10em;
+  width: 10em;
+  background: #dddddd;
+  transform: rotate(45deg);
+  border-radius: 95% 0;
+  z-index:10;
+  position: relative;
+}
+
+.fish-eye{
+  height: 1em;
+  width: 1em;
+  margin-top: 3.5em;
+  
+  background-color: #aca6a6;
+  border-radius: 50%;
+  z-index:11;
+  position: absolute;
+
+}
+
+
+.fish-tail {
+	border-top: var(--size-1) solid transparent;
+  border-left: var(--size-2) solid var(--border-left-color);
+	border-bottom: var(--size-1) solid transparent;
+  rotate: var(--tail-rotate);
+  margin-left: var(--tail-x);
+  margin-top: var(--tail-y);
+  z-index:11;
+  position: absolute;
+  animation: swish 3s infinite;
+  
+
+}
+
+@keyframes swish {
+  0% {
+    transform: rotateZ(-5deg) scaleX(1);
+  }
+  50% {
+    transform: rotateZ(5deg) scaleX(1.5);
+  }
+  100% {
+    transform: rotateZ(-5deg) scaleX(1);
+  }
+}
+
+@keyframes swim1 {
+  0%{
+    left: -50%;
+  }
+  100%{
+    left:150%
+  }
+}
+
+@keyframes swim2 {
+  0%{
+    left: 100%;
+  }
+  100%{
+    left: -50%;
+  }
+}
+
+/* Night Sky --------------------------------------------------------------------------------------------*/
+.rect{
+  --deg1:45deg;
+  --deg2: 60deg;
+  --deg3: 45deg;
+ animation: tilt ease-in-out 5s infinite;
+}
+
+.rect1{
+  --deg1: 50deg;
+  --deg2: 65deg;
+  --deg3: 50deg;
+ animation: tilt ease-in-out 5s infinite;
+}
+
+.rect2{
+  --deg1: 55deg;
+  --deg2: 70deg;
+  --deg3: 55deg;
+ animation: tilt ease-in-out 5s infinite;
+}
+
+.rect3{
+  --deg1: 60deg;
+  --deg2: 75deg;
+  --deg3: 60deg;
+ animation: tilt ease-in-out 5s infinite;
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(var(--deg1)) ;
+  }
+  50% {
+    transform: rotate(var(--deg2)) ;
+  }
+  100% {
+    transform: rotate(var(--deg3));
+  }
+}
+
+
+.star{
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1)  ;
+  animation:  animat 3s linear infinite; 
+}
+
+
+.star-tail {
+  position: absolute;
+  top: -150%;
+  left: 0px;
+  z-index: -1;
+  
+
+}
+
+
+.star-tail-path {
+  stroke: linear-gradient(to right, #f1f5f7, #d80b77);
+}
+
+
+@keyframes animate {
+  0%
+  {
+      transform: rotate(345deg)  translateX(0) translateY(0px);
+      opacity: 1;
+  }
+  70%
+  {
+      opacity: 1;
+
+  }
+  100%
+  {
+      transform: rotate(300deg) translateX(-1500px) translateY(-100px);
+      opacity: 0;
+
+  }
+  
+}
+
+
+
+
+
+
+
+
+.shooting_star {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  height: 2px;
+  border-radius: 885px;
+  background: linear-gradient(-45deg,
+          #eef0f5, rgba(0, 0, 255, 0));
+  filter: drop-shadow(0 0 6px #d7dff0);
+  animation: tail 3000ms ease-in-out infinite,
+        shooting 3000ms ease-in-out infinite;
+
+}
+
+.shooting_star::before
+.shooting_star::after{
+  content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(-45deg,rgba(0, 0, 255, 0),#eaeef8, rgba(0, 0, 255, 0));
+    border-radius: 100%;
+    animation: shining 3000ms ease-in-out infinite;
+    transform: translateX(50%) rotateZ(90deg);
+}
+
+.shooting_star::after {
+  -webkit-transform: translateX(50%) rotateZ(-90deg);
+  transform: translateX(50%) rotateZ(-90deg);
+}
+
+
+@keyframes shooting {
+  0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+  }
+
+  100% {
+      -webkit-transform: translateX(270px);
+      transform: translateX(270px);
+  }
+}
+
+@keyframes tail{
+  0%{
+    width: 0%;
+  }
+  30% {
+    width: 100px;
+  }
+  100% {
+    width: 0px;
+  }
+
+}
+
+@keyframes shining {
+  0% {
+      width: 0;
+  }
+
+  50% {
+      width: 30px;
+  }
+
+  100% {
+      width: 0;
+  }
+}
+
+/* Leaves --------------------------------------------------------------------------------------------*/
+
+.leaf {
+	width: var(--leaf-width);
+	height: var(--leaf-height);
+	border-radius: 0 40px;
+	background-color: var(--leaf-color);
+  animation: blowing var(--leaf-speed) linear infinite;
+  animation-delay: var(--leaf-delay);
+  
+}
+.leaf::before {
+  content: '';
+  position: absolute;
+  top: 40%; 
+  left: 85%;
+  transform: translateX(-50%) rotate(-45deg);
+  width: 5px;
+  height: 50px; 
+  background-color: var(--leaf-color2); 
+  border-radius: 10px; 
+}
+
+
+
+
+@keyframes blowing {
+  0%{
+    -webkit-transform: translate3d(0%, -20vh , 0)
+    rotate(var(--leaf-rotate));
+      transform: translate3d(0%, -20vh , 0)
+      rotate(var(--leaf-rotate));
+      opacity: 100%;
+  } 
+
+  100%{
+    -webkit-transform: translate3d(-500%, 150vh , 0)
+    rotate(270deg) ;
+      transform: translate3d(-500%, 150vh , 0) 
+      rotate(270deg);
+      opacity: 20%; 
+
+  } 
+}
+
+
+/*----Snow----------------------------------------------------------------------------------------------------*/
+
+.snow-container {
+  width: 100%; /* Adjust to fit your design */
+  height: 100vh;
+}
+
+
+.snow {
+  width: calc(150%);
+  position: absolute;
+
+}
+
+
+.snowflake {
+  width: 4px;
+  height:4px;
+  border-radius: 100%;
+  background-color: #ffffff;
+  animation: falling linear infinite;
+  position: absolute;
+  top: -10%;
+}
+
+@keyframes falling {
+  0%{
+    -webkit-transform: translate3d(0%, -20vh , 0);
+      transform: translate3d(0%, -20vh , 0);
+      opacity: 100%;
+  } 
+
+  100%{
+    -webkit-transform: translate3d(-500%, 100vh , 0);
+      transform: translate3d(-500%, 100vh , 0);
+      opacity: 20%; 
+
+  } 
+}
+
+
 
 .Title-1{
     color: #FFFFFF;
@@ -97,27 +546,6 @@ h2{
     z-index: 0;
 }
 
-/*
-.ball{
-    width: 20px;
-    height: 20px;
-    background-color: aliceblue;
-    position: relative;
-    animation: abouty;
-    animation-duration: 20s;
-    animation-iteration-count: 2;
-    animation-iteration-count: infinite;
-    border-radius: 100%;
-}
-
-@keyframes abouty {
-    0%   {background-color:red; left:60%; top:-30%;}
-    25%  {background-color:red; left:%; top:-30%;}
-    50%  {background-color:blue; left:105%; top:115%;}
-    75%  {background-color:blue; left:-5%; top:115%;}
-    100% {background-color:red; left:-5%; top:-30%;}
-  }
-*/
 
 .About-container{
     padding-left: 5%;
@@ -241,6 +669,8 @@ h2{
 
 
 
+
+
 /* Fonts --------------------------------------------------------------------------------------------*/
 
 @font-face {
@@ -259,290 +689,44 @@ h2{
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Inter';
+    src: url('/src/assets/Inter-VariableFont_opsz_wght.woff2') format('woff2'),
+         url('/src/assets/Inter-VariableFont_opsz_wght.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Megrim';
+    src: url('/src/assets/Megrim-Regular.woff2') format('woff2'),
+         url('/src/assets/Megrim-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/src/assets/Nunito-VariableFont_wght.woff2') format('woff2'),
+       url('/src/assets/Nunito-VariableFont_wght.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('/src/assets/Rubik-VariableFont_wght.woff2') format('woff2'),
+       url('/src/assets/Rubik-VariableFont_wght.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SUSE';
+  src: url('/src/assets/SUSE-VariableFont_wght.woff2') format('woff2'),
+       url('/src/assets/SUSE-VariableFont_wght.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* responsive view --------------------------------------------------------------------------------------------*/
-
-
-@media only screen and (max-width: 1500px) {
-    .html{
-        overflow: hidden;
-        max-width: 100%;
-    }
-
-    .ball {
-        display: none;
-    }
-    .About{
-        margin-right: 5%;
-        font-size:2vh;
-        padding: 5%;
-    }
-    .Background-image{
-        margin-top: 0%;
-        border-radius: 30px;
-    }
-    h1{
-        font-size:3vh; 
-    }
-
-    .Inner-header{
-        padding:1vh;
-        color: #FFFFFF;
-        text-decoration: none;
-        font-size: 3vw;
-    }
-    .squares{
-        display: none;
-    }
-
-
-  }
-
-
-/* background animation --------------------------------------------------------------------------------------------*/
-
-
-@keyframes squary {
-    0%   { top:0%;
-           transform: rotate(0deg);}
-    100% { top:100%;
-           transform: rotate(720deg)}
-  }
-
-/*Squares*/
-.square1{
-    width: 20px;
-    height: 20px;
-    margin-left: 20%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 28s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 2s;
-}
-
-.square2{
-    width: 40px;
-    height: 40px;
-    margin-left: 40%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 23s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 0s;
-}
-
-.square3{
-    width: 60px;
-    height: 60px;
-    margin-left: 60%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 20s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 4s;
-}
-
-.square4{
-    width: 50px;
-    height: 50px;
-    margin-left: 80%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 25s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 3s;
-}
-
-.square5{
-    width: 10px;
-    height: 10px;
-    margin-left: 10%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 25s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 2s;
-}
-
-.square6{
-    width: 5px;
-    height: 5px;
-    margin-left: 50%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 30s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 0s;
-}
-
-
-.square7{
-    width: 25px;
-    height: 25px;
-    margin-left: 35%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 22s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 1s;
-}
-
-
-.square8{
-    width: 15px;
-    height: 15px;
-    margin-left: 75%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 17s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 3s;
-}
-
-.square9{
-    width: 45px;
-    height: 45px;
-    margin-left: 15%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 10s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 2s;
-}
-
-
-.square10{
-    width: 20px;
-    height: 20px;
-    margin-left: 55%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 20s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 0s;
-}
-
-.square11{
-    width: 45px;
-    height: 45px;
-    margin-left: 50%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 30s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 5s;
-}
-
-.square12{
-    width: 20px;
-    height: 20px;
-    margin-left: 80%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 26s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 6s;
-}
-
-.square13{
-    width: 15px;
-    height: 15px;
-    margin-left: 15%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 20s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 7s;
-}
-
-.square14{
-    width: 25px;
-    height: 25px;
-    margin-left: 90%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 27s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 4s;
-}
-
-.square15{
-    width: 45px;
-    height: 45px;
-    margin-left: 90%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 35s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 5s;
-}
-
-.square16{
-    width: 35px;
-    height: 35px;
-    margin-left: 60%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 35s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 12s;
-}
-
-.square17{
-    width: 15px;
-    height: 15px;
-    margin-left: 30%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 27s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 10s;
-}
-
-.square18{
-    width: 10px;
-    height: 10px;
-    margin-left: 20%;
-    background-color: aliceblue;
-    opacity: 20%;
-    position: absolute;
-    animation: squary 23s linear infinite;
-    border-radius: 30%;
-    z-index: 0;
-    animation-delay: 15s;
-}
