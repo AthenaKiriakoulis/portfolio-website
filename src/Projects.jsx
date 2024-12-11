@@ -31,7 +31,7 @@ function Projects() {
   const skills = [
     [{title: react, scale: "25%"},{title: tailwind, scale: "33%"},{title: html, scale: "25%"},{title: js, scale: "25%"},{title: css, scale: "20%"}],
     [{title: react, scale: "25%"},{title: html, scale: "25%"},{title: js, scale: "25%"},{title: css, scale: "20%"}],
-    [{title: python, scale: "70%"},{title: tkinter, scale: "50%"}]
+    [{title: python, scale: "70%"},{title: tkinter, scale: "30%"}]
 
 
   ]
@@ -107,9 +107,10 @@ function Projects() {
         <div className='m-8 relative box-border w-2/5 flex flex-col bg-orange-700 z-20 opacity-90 border-2 border-amber-700 rounded-xl hidden md:block'>
             <h1 className='mt-8 mx-8 text-4xl relative font-bold font-rubik text-white border-b border-amber-700 opacity-100'>Skills</h1>
             <div className='flex flex-wrap items-start gap-x-2 gap-y-2'>
-            {project.map((skill, i) => (
+            {project.length == 0 ? <h1 className='mt-4 mx-4 text-2xl relative w-full text-center font-medium font-rubik text-white opacity-100'>Click on a project!</h1> :
+             (project.map((skill, i) => (
               <img key={i} src={skill.title}  style={{ width: skill.scale }} className={` mx-4 my-4 h-auto relative max-h-full object-contain`}></img>
-            ))}
+            )))}
             </div>
 
 

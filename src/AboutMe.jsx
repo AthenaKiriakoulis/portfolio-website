@@ -20,6 +20,9 @@ function AboutMe() {
       return () => clearTimeout(timer);
   }, []);
 
+
+
+
   const height = (window.innerHeight);
   const width = (window.innerWidth);
 
@@ -78,7 +81,7 @@ function AboutMe() {
 
   </svg>
   <div className='absolute inset-0 flex items-center justify-center z-10'>
-  <div className='flex flex-row overflow-hidden bg-opacity-80 rounded-lg border-4 border-cyan-500 shadow-lg w-11/12 p-4 md:w-6/12 lg:w-6/12 lg:h-auto lg:p-6  '>
+  <div className='slider-container flex flex-row overflow-hidden bg-white/20 backdrop-blur-sm rounded-lg border-4 border-cyan-500 shadow-lg w-11/12 p-4 md:w-6/12 lg:w-6/12 lg:h-auto lg:p-6  z-20'>
 
     <button onClick={handlePrevious} className="ml-[0%] lg:ml-3 z-20 absolute lg:static">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 ">
@@ -113,16 +116,16 @@ function AboutMe() {
   </div>
 
 
-  <div className='fish-container size-36 mx-5 inset-x-full absolute hidden lg:block ' style={{'--swim-type': 'swim1', '--swim-delay': '2s'}}>
-  <div className='fish-eye bg-white size-3 ml-32'></div>
-  <div className='fish-tail size-1' 
+  <div className='fish-container size-36 mx-5 inset-x-full absolute hidden lg:block  ' style={{'--swim-type': 'swim1', '--swim-delay': '2s'}}>
+  <div className='fish-eye-back  bg-white size-3 ml-32 '></div>
+  <div className='fish-tail-back size-1' 
   style={{ '--border-left-color': '#F05252',
    '--size-1': '3em', '--size-2': '6em', 
    '--tail-x': '-5em' , '--tail-y': '1.5em' ,'--tail-rotate': '0deg' }}></div>
-    <div className='fish bg-red-500 size-36' ></div> </div>
+    <div className='fish-back  bg-red-500 size-36 ' ></div> </div>
 
     
-  <div className='fish-container size-36 mx-5 inset-y-3/4 inset-x-full absolute hidden lg:block' style={{'--swim-type': 'swim2', '--swim-delay': '0s'}}>
+  <div className='fish-container size-36 mx-5 inset-y-3/4 inset-x-full absolute hidden lg:block ' style={{'--swim-type': 'swim2', '--swim-delay': '0s'}}>
   <div className='fish-eye bg-white size-3  ml-4 my-8 '></div>
   <div className='fish-tail size-1' 
   style={{ '--border-left-color': '#9061F9', 

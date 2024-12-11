@@ -187,6 +187,16 @@ html,body{
   position: relative;
 }
 
+.fish-back {
+  height: 10em;
+  width: 10em;
+  background: #dddddd;
+  transform: rotate(45deg);
+  border-radius: 95% 0;
+  z-index:1;
+  position: relative;
+}
+
 .fish-eye{
   height: 1em;
   width: 1em;
@@ -195,6 +205,18 @@ html,body{
   background-color: #aca6a6;
   border-radius: 50%;
   z-index:11;
+  position: absolute;
+
+}
+
+.fish-eye-back{
+  height: 1em;
+  width: 1em;
+  margin-top: 3.5em;
+  
+  background-color: #aca6a6;
+  border-radius: 50%;
+  z-index:2;
   position: absolute;
 
 }
@@ -208,6 +230,20 @@ html,body{
   margin-left: var(--tail-x);
   margin-top: var(--tail-y);
   z-index:11;
+  position: absolute;
+  animation: swish 3s infinite;
+  
+
+}
+
+.fish-tail-back {
+	border-top: var(--size-1) solid transparent;
+  border-left: var(--size-2) solid var(--border-left-color);
+	border-bottom: var(--size-1) solid transparent;
+  rotate: var(--tail-rotate);
+  margin-left: var(--tail-x);
+  margin-top: var(--tail-y);
+  z-index:2;
   position: absolute;
   animation: swish 3s infinite;
   
@@ -243,6 +279,9 @@ html,body{
     left: -50%;
   }
 }
+
+
+
 
 /* Night Sky --------------------------------------------------------------------------------------------*/
 .rect{
